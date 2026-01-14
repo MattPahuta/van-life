@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./routes/Home"
 import About from "./routes/About"
-
+import "./server"
 
 function App() {
 
