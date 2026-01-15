@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Vans() {
 
@@ -10,18 +11,30 @@ function Vans() {
       .then(data => setVans(data.vans))
   }, []);
 
-  const vanCards = vans.map(van => (
+  const vanCards = vans.map((van) => (
     <li key={van.id} className="group p-2">
-      <img src={van.imageUrl} alt={van.name} className="w-full aspect-square object-cover rounded-lg" />
-      <div className="pt-4 flex items-center justify-between">
-        <h2 className="text-xl font-semibold">{van.name}</h2>
-        <p className="text-xl font-semibold flex flex-col">${van.price}
-          <span className="block font-normal text-sm self-end">/day</span>
-        </p>
-      </div>
-      <span className={`inline-flex items-center px-4 py-1 rounded-md bg-orange-400 text-white font-semibold`}>{van.type}</span>
+      <Link to={`/vans/${van.id}`}>
+        <img
+          src={van.imageUrl}
+          alt={van.name}
+          className="w-full aspect-square object-cover rounded-lg"
+        />
+        <div className="pt-4 flex items-center justify-between">
+          <h2 className="text-xl font-semibold">{van.name}</h2>
+          <p className="text-xl font-semibold flex flex-col">
+            ${van.price}
+            <span className="block font-normal text-sm self-end">
+              /day
+            </span>
+          </p>
+        </div>
+        <span
+          className={`inline-flex items-center px-4 py-1 rounded-md bg-orange-400 text-white font-semibold`}>
+          {van.type}
+        </span>
+      </Link>
     </li>
-  ))
+  ));
 
   return (
     <main className="mx-auto max-w-2xl py-16 px-4">
