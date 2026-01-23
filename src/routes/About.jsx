@@ -4,7 +4,7 @@ import aboutHero from "../assets/about-hero.png";
 
 function About() {
   return (
-    <main className="mx-auto max-w-2xl">
+    <>
       <img
         src={aboutHero}
         alt="Man sitting on top of van roof, gazing up at the stars"
@@ -40,7 +40,7 @@ function About() {
           </Link>
         </div>
       </div>
-    </main>
+    </>
   );
 }
 

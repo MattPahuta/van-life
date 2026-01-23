@@ -12,7 +12,7 @@ function Vans() {
   }, []);
 
   const vanCards = vans.map((van) => (
-    <li key={van.id} className="group p-2">
+    <li key={van.id} className="group">
       <Link to={`/vans/${van.id}`}>
         <img
           src={van.imageUrl}
@@ -37,15 +37,15 @@ function Vans() {
   ));
 
   return (
-    <main className="mx-auto max-w-2xl py-16 px-4">
-      <h1 className="text-3xl font-bold">Explore our van options</h1>
+    <div className="py-10 px-4">
+      <h1 className="mb-8 text-3xl font-bold">Explore our van options</h1>
       {/* Van filters */}
       <ul className="flex"></ul>
       {/* Van card grid */}
-      <ul className="py-10 grid sm:grid-cols-2 gap-y-5 gap-x-2">
+      <ul className="grid gap-10 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-5">
         {vanCards}
       </ul>
-    </main>
+    </div>
   );
 }
 

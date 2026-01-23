@@ -15,7 +15,7 @@ function VanDetail() {
   console.log(van)
 
   return (
-    <main className="mx-auto max-w-2xl">
+    <>
       {van ? (
         <div className="p-6 space-y-4">
           <img
@@ -39,7 +39,7 @@ function VanDetail() {
       ) : (
         <h1>Loading...</h1>
       )}
-    </main>
+    </>
   );
 }
 
