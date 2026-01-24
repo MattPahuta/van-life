@@ -16,6 +16,7 @@ function HostVanDetail() {
   return (
     <section className="mx-auto max-w-2xl flex flex-col gap-8">
       {/* back to all vans link */}
+      {/* update this to */}
       <Link to=".." relative="path" className="text-neutral-600">
         &larr;{" "}
         <span className="underline underline-offset-2">
