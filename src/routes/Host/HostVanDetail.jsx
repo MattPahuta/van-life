@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, NavLink } from "react-router-dom";
+import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 
 function HostVanDetail() {
   const { id } = useParams();
   const [van, setVan] = useState(null);
+
+  const isActiveStyle = {
+    fontWeight: 'bold',
+    textDecoration: 'underline',
+    color: '#161616'
+  }
 
   useEffect(() => {
     fetch(`/api/host/vans/${id}`)
@@ -44,12 +50,31 @@ function HostVanDetail() {
         </div>
 
         <nav className="flex gap-4">
-          <NavLink to="/details" end>
+          <NavLink 
+            to="." 
+            end 
+            className="hover:underline" 
+            style={({isActive}) => isActive ? isActiveStyle : null }
+          >
             Details
           </NavLink>
-          <NavLink to="/pricing">Pricing</NavLink>
-          <NavLink to="/photos">Photos</NavLink>
+          <NavLink 
+            to="pricing" 
+            className="hover:underline" 
+            style={({isActive}) => isActive ? isActiveStyle : null }
+          >
+            Pricing
+          </NavLink>
+          <NavLink 
+            to="photos" 
+            className="hover:underline" 
+            style={({isActive}) => isActive ? isActiveStyle : null }
+          >
+            Photos
+          </NavLink>
         </nav>
+
+        <Outlet />
       </div>
     </section>
   );
