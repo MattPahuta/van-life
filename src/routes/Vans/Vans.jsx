@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 function Vans() {
-
+  let [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type");
   const [vans, setVans] = useState([]);
 
   useEffect(() => {
@@ -11,7 +12,9 @@ function Vans() {
       .then(data => setVans(data.vans))
   }, []);
 
-  const vanCards = vans.map((van) => (
+  const displayedVans = typeFilter ? vans.filter(van => van.type === typeFilter) : vans;
+
+  const vanCards = displayedVans.map((van) => (
     <li key={van.id} className="group">
       <Link to={`/vans/${van.id}`}>
         <img
