@@ -47,23 +47,25 @@ function Vans() {
         <li>
           <button 
             onClick={() => setSearchParams({type: "simple"})}
-            className="py-2 px-4 bg-orange-200 rounded-lg cursor-pointer">Simple</button>
+            className={`py-2 px-4 bg-orange-200 rounded-lg cursor-pointer ${typeFilter === 'simple' ? 'bg-orange-400' : ''}`}>Simple</button>
         </li>
         <li>
           <button 
             onClick={() => setSearchParams({type: "luxury"})}
-            className="py-2 px-4 bg-orange-200 rounded-lg cursor-pointer">Luxury</button>
+            className={`py-2 px-4 bg-orange-200 rounded-lg cursor-pointer ${typeFilter === 'luxury' ? 'bg-orange-400' : ''}`}>Luxury</button>
         </li>
         <li>
           <button 
             onClick={() => setSearchParams({type: "rugged"})}
-            className="py-2 px-4 bg-orange-200 rounded-lg cursor-pointer">Rugged</button>
+            className={`py-2 px-4 bg-orange-200 rounded-lg cursor-pointer ${typeFilter === 'rugged' ? 'bg-orange-400' : ''}`}>Rugged</button>
         </li>
-        <li>
-          <button 
-            onClick={() => setSearchParams({})}
-            className="py-2 px-4 underline underline-offset-2 cursor-pointer">Clear filters</button>
-        </li>
+        {typeFilter ? (
+          <li>
+            <button 
+              onClick={() => setSearchParams({})}
+              className="py-2 px-4 underline underline-offset-2 cursor-pointer">Clear filters</button>
+          </li>
+          ) : null}
       </ul>
       {/* Van card grid */}
       <ul className="grid gap-10 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-5">
