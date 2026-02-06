@@ -22,7 +22,7 @@ function Vans() {
           alt={van.name}
           className="w-full aspect-square object-cover rounded-lg"
         />
-        <div className="pt-4 flex items-center justify-between">
+        <div className="pt-6 flex items-center justify-between">
           <h2 className="text-xl font-semibold">{van.name}</h2>
           <p className="text-xl font-semibold flex flex-col">
             ${van.price}
