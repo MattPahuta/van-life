@@ -6,19 +6,19 @@ function HostVanInfo() {
   return (
     <dl className="space-y-2">
       <div>
-        <dt className="font-bold inline mr-2">Name:</dt>
+        <dt className="font-bold inline mr-3">Name:</dt>
         <dd className="inline">{van.name}</dd>
       </div>
       <div>
-        <dt className="font-bold inline mr-2">Type:</dt>
+        <dt className="font-bold inline mr-3">Type:</dt>
         <dd className="inline">{van.type}</dd>
       </div>
       <div>
-        <dt className="font-bold inline mr-2">Description:</dt>
+        <dt className="font-bold inline mr-3">Description:</dt>
         <dd className="inline">{van.description}</dd>
       </div>
       <div>
-        <dt className="font-bold inline mr-2">Visibility:</dt>
+        <dt className="font-bold inline mr-3">Visibility:</dt>
         <dd className="inline">Public</dd>
       </div>
     </dl>
