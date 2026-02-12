@@ -16,7 +16,7 @@ function Vans() {
 
   const vanCards = displayedVans.map((van) => (
     <li key={van.id} className="group">
-      <Link to={van.id}>
+      <Link to={van.id} state={{ search: `?${searchParams.toString()}`, type: typeFilter }}>
         <img
           src={van.imageUrl}
           alt={van.name}

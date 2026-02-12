@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 
 function VanDetail() {
   const params = useParams();
-
+  const location = useLocation();
   const [van, setVan] = useState(null);
 
   useEffect(() => {
@@ -14,8 +14,21 @@ function VanDetail() {
 
   console.log(van)
 
+  const search = location.state?.search || "";
+  const backBtnDetail = location.state?.type || "all";
+
   return (
-    <>
+    <div className="">
+      <Link 
+        to={`..${search}`} 
+        relative="path" 
+        className="text-neutral-600"
+      >
+        &larr;{" "}
+        <span className="underline underline-offset-2">
+          Back to {backBtnDetail} vans
+        </span>
+      </Link>
       {van ? (
         <div className="p-6 space-y-4">
           <img
@@ -39,7 +52,7 @@ function VanDetail() {
       ) : (
         <h1>Loading...</h1>
       )}
-    </>
+    </div>
   );
 }
 
