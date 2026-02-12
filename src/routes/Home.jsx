@@ -4,7 +4,7 @@ import homeHero from '../assets/home-hero.png';
 
 function Home() {
   return (
-    <div className="mx-auto max-w-2xl py-16 px-4 text-white bg-cover bg-center relative" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${homeHero})` }}>
+    <div className="mx-auto py-16 px-4 text-white bg-cover bg-center relative" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${homeHero})` }}>
       <h1 className="mb-6 text-4xl font-bold">
         You got the travel plans, we got the travel vans.
       </h1>

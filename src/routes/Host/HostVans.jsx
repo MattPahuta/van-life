@@ -12,7 +12,7 @@ function HostVans() {
 
   const vanCards = vans.map((van) => (
     <li key={van.id} className="p-4 bg-white rounded-lg">
-      <Link to={`/host/vans/${van.id}`}>
+      <Link to={van.id}>
         <div className="flex items-center gap-3">
           <img src={van.imageUrl} alt={van.name} className="object-cover size-16 aspect-square rounded-sm" />
           <div>

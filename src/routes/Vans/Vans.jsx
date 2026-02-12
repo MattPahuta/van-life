@@ -16,7 +16,7 @@ function Vans() {
 
   const vanCards = displayedVans.map((van) => (
     <li key={van.id} className="group">
-      <Link to={`/vans/${van.id}`}>
+      <Link to={van.id}>
         <img
           src={van.imageUrl}
           alt={van.name}
